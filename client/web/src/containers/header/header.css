@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&display=swap");
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  background-color: var(--color-bg);
+}
+.text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  justify-content: center;
+  min-height: 90vh;
+  transition: 0.3s ease-in-out all;
+  color: var(--color-text);
+  font-family: "Italianno", cursive;
+  font-size: 8rem;
+}
+.cyt {
+  cursor: default;
+  transition: 0.3s ease-in-out all;
+  text-shadow: 0 0 10px #1e68c8;
+  color: var(--color-text);
+  font-family: "Italianno", cursive;
+}
+.div {
+  display: flex;
+  font-family: var(--font-family);
+  font-size: 2rem;
+  margin-top: 60px;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+
+  gap: 10rem;
+}
+.div > a {
+  cursor: pointer;
+  transition: 0.3s ease-in all;
+  color: rgba(255, 255, 255, 0.5);
+  width: 300px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  letter-spacing: 2px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.div > a::before,
+.div > a::after {
+  content: "";
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+
+.div > a::before {
+  content: "";
+  right: 0;
+  top: 0;
+  border-top: 3px solid #1e68c8;
+  border-right: 3px solid #1e68c8;
+  transform: translate(-100%, 50%);
+}
+
+.div > a:after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid #1e68c8;
+  border-left: 3px solid #1e68c8;
+  transform: translate(100%, -50%);
+}
+
+.div > a:hover:before,
+.div > a:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.div > a:hover {
+  color: #1e68c8;
+}
+@media (max-width: 768px) {
+  .text {
+    font-size: 4rem;
+    margin-top: 50%;
+    display: block;
+  }
+
+  .div {
+    display: block;
+    flex-direction: column;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    justify-content: center;
+    padding: 10px;
+  }
+  .div a {
+    font-size: 18px;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-right: 0;
+  }
+}

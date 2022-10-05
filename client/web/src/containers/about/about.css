@@ -1,0 +1,131 @@
+.container_v {
+  display: flex;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: rgb(16, 16, 17);
+}
+
+.con {
+  gap: 2rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.avatar {
+  overflow: hidden;
+  width: 18rem;
+  height: 18rem;
+  display: flex;
+  position: relative;
+  border-radius: 100%;
+  margin-top: 5rem;
+  animation: shadow 5s infinite;
+}
+.avatar img {
+  position: absolute;
+  box-shadow: 0 0 40px #1e68c8;
+  width: 100%;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%) scale(1);
+  height: auto;
+}
+@keyframes shadow {
+  0% {
+    box-shadow: 0 0 10px #1e68c8;
+  }
+  10% {
+    box-shadow: 0 0 15px #1e68c8;
+  }
+  20% {
+    box-shadow: 0 0 20px #1e68c8;
+  }
+  30% {
+    box-shadow: 0 0 15px #1e68c8;
+  }
+  40% {
+    box-shadow: 0 0 30px #1e68c8;
+  }
+  50% {
+    box-shadow: 0 0 20px #1e68c8;
+  }
+  60% {
+    box-shadow: 0 0 35px #1e68c8;
+  }
+  70% {
+    box-shadow: 0 0 40px #1e68c8;
+  }
+  80% {
+    box-shadow: 0 0 20px #1e68c8;
+  }
+  90% {
+    box-shadow: 0 0 25px #1e68c8;
+  }
+  100% {
+    box-shadow: 0 0 30px #1e68c8;
+  }
+}
+.content {
+  width: 400px;
+  height: auto;
+  margin-top: 90px;
+  padding-left: 60px;
+  padding-right: 20px;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  font-size: 18px;
+  gap: 1rem;
+  display: flex;
+  text-align: left;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+.tag h1 {
+    color: var(--color-text);
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-weight: 0;
+    width: 200px;
+    border-bottom: 2px solid var(--color-text);
+    position: relative;
+  }
+ .tag h1::before {
+  display: block;
+  height: 100%;
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -157%;
+  transform: translate(-50%, -50%);
+}
+.tag{
+    color: var(--color-text);
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    font-weight: 0;
+    position: relative;
+}
+@media (max-width: 768px) {
+  .con {
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  .content {
+    width: 300px;
+  }
+}

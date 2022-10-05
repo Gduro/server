@@ -1,0 +1,129 @@
+body{
+    scroll-behavior: smooth;
+}
+.header {
+  padding: .8rem 2rem;
+  display: flex;
+  justify-content: space-between
+}
+.menu{
+    display: flex;
+    padding-top: .9rem;
+    text-align: center;
+    margin-right: 2rem;
+    list-style-type: none;
+    gap: 3rem;
+    font-size: 18px;
+    color: var(--color-text);
+    font-family: var(--font-family);
+}
+.header__logo {
+  /* background: pink; */
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 28px;
+  padding-top: .7rem;
+  text-align: left;
+
+}
+.header__link{
+    cursor: pointer;
+    position: relative;
+}
+.header__link::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    background-color: #1e68c8;
+    left: 0;
+    bottom: -10px;
+    transition: .3s ease-in-out;
+    border-radius: 3px;
+}
+.header__link:hover::after{
+    width: 100%;
+}
+
+
+.header__burger{
+    display: none;
+    cursor: pointer;
+}
+.burger{
+    color: aliceblue;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+    transition: 5s ease-out all ;
+    margin-top: 11px;
+    
+}
+.header_v{
+    height: 400px;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .header__burger{
+
+        display: block;
+        position: absolute;
+        top: 1.5%;
+        right: 1%;
+    }
+    .header{
+        text-align: center;
+        justify-content: center;
+        justify-items: center;
+
+    }
+    .header__logo{
+        height: 30px;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+    }
+    .menu{
+        transform: translate(-600px);
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        top: 20%;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+    .menu-mobile{
+        transform: translate(0);
+        position: absolute;
+        left: 0;
+        background-color: #101213d2;
+        height: 100%;
+        z-index: 1;
+        width: 100%;
+        top: 60px;
+        align-items: center;
+        display: block;
+        text-align: center;
+        list-style-type: none;  
+        font-size: 18px;
+        color: var(--color-text);
+        font-family: var(--font-family);
+       
+    }
+    .menu-mobile>.header__link{
+        top: 25%;
+        margin-top: 20px;
+        width: 100%;
+        transition: .5s ease-in-out all;
+
+    }
+    .menu-mobile>.header__link:nth-child(1){
+        margin-top: 3px;
+    }
+
+}  
+
+

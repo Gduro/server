@@ -1,0 +1,62 @@
+.contain4{
+    display: flex;
+    text-align: center;
+    align-items:center;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    gap: 10%;
+    margin: 0;
+    background: rgb(9, 9, 11);
+
+}
+.cona{
+    width: 100px;
+    height: 100px;
+    color: rgb(0, 13, 255);
+    transition: transform 1s;
+    filter: drop-shadow(16px 16px 50px);
+}
+.cona:hover{
+    transform: scale(1.1);
+    filter: drop-shadow(16px 16px 55px);
+
+}
+@keyframes anim {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+
+}
+.w{
+    color: aliceblue;
+
+}
+    
+.con1{
+    animation: anim 1s linear infinite;
+  animation-fill-mode: both;
+    animation-delay: .5s 
+}
+.con2{
+    animation: anim 1s linear infinite;
+    animation-fill-mode: both;
+      animation-delay: 1s 
+}
+.con3{
+    animation: anim 1s linear infinite;
+    animation-fill-mode: both;
+      animation-delay: 1.5s 
+}
+.con4{
+    animation: anim 1s linear infinite;
+    animation-fill-mode: both;
+      animation-delay: 2s 
+}

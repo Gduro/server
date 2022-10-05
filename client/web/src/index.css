@@ -1,0 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+:root{
+  --font-family: 'PT Serif', serif;
+  --font-text: 'PT Serif', serif;
+  --color-bg: #101213;
+  --color-text:#bdc3c7;
+  --phone: 768px;
+}
