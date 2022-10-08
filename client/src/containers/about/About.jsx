@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./about.css";
 import avatar from "./avatar.jpg";
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
       <div className="container_v" id="about">
         <div className="con">
           <div className="avatar">
-            <img src={avatar} alt="" />
+            <img src={avatar} alt="portret" />
           </div>
           <div className="content">
             <div className="name">Zenon Klaus</div>

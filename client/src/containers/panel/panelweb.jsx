@@ -20,10 +20,10 @@ const PanelW = () => {
   const [cow, setCow] = useState([{ id: "", data: {} }]);
   const [ncode, setNCode] = useState("");
   const usr = cow.map((user) => {
-    return user.data;
+    return user.id;
   });
 
-  console.log(usr);
+  console.log("usr "+ usr);
   const temp = [{ id: "", data: {} }];
   temp.pop();
   const results = [];
@@ -69,11 +69,14 @@ const PanelW = () => {
       }
     });
   };
+  console.log("us2r "+ typeof(usr));
+
   return (
     <>
       <div className="cards_collections_container">
-        {cow.map((user) => (
-          <div key={Math.random()} className="person_card">
+        {cow.map((user,index) => {
+          return user.id !==" "  ? 
+        <div key={index} className="person_card">
             <div className="trash" onClick={() => DeleteUsr(user.data.userId)}>
               <BsTrash />
             </div>
@@ -127,7 +130,11 @@ const PanelW = () => {
               <br />
             </ul>
           </div>
-        ))}
+
+          :
+          <h1 className="name">BRAK ZGŁOSZEŃ</h1>
+        }      
+        )}
       </div>
       <div className="sep">
         <div className="sep__con">

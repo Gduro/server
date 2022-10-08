@@ -1,4 +1,3 @@
-export {default as Blog} from './Blog/Blog';
 export {default as Footer} from './Footer/Footer';
 export {default as Header} from './header/Header';
 export {default as Opinions} from './opinions/Opinions';

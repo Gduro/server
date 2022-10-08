@@ -23,13 +23,10 @@ export default function ViewVacAdm() {
           id: doc.id,
         }));
         setVacList(vac);
-        console.log(vacList);
       })
       .catch((err) => {
-        console.log(err);
       });
   }
-  console.log(vacList);
   const DeleteUsr = (id) => {
     const userDoc = doc(projectFirestore, "urlop", id);
 

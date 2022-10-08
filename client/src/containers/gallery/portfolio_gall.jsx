@@ -1,10 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { useState, useEffect } from "react";
-import NavBar from "../../components/NavBar/NavBar";
-import Link from "react-scroll/modules/components/Link";
 import { projectStorage } from "../firebaseConfig";
-import { listAll, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { v4 } from "uuid";
+import { listAll, ref, getDownloadURL } from "firebase/storage";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./gallery.css";
 import { Navigation } from "swiper";
@@ -27,14 +24,14 @@ export default function Gallery() {
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         {imageList.map((url, index) => {
         
-            return url != '' ? 
+            return url !== '' ? 
               <SwiperSlide className="pics" key={index}>
                 <img src={url} alt="" />
               </SwiperSlide>
           
 
           :
-          <h1 class="loading">Loading...</h1>
+          <h1 class="loading"></h1>
         })}
       </Swiper>
     </div>

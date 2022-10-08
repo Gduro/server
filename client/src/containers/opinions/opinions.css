@@ -2,7 +2,11 @@
 .container_v2 {
   display: flex;
   min-height: 100vh;
-
+  flex-direction: row;
+  height: 100%;
+  text-align: center;
+  align-items:center;
+  justify-content: center;
   margin: 0;
   background: rgb(13, 13, 15);
 }

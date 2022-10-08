@@ -14,10 +14,8 @@ export default function UploadText() {
     const vacRef = collection(projectFirestore, 'urlop');
     addDoc(vacRef, { vacation })
       .then((res) => {
-        console.log(res);
       })
       .catch((err) => {
-        console.log(err);
       });
     alert(vacation);
   };

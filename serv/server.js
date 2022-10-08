@@ -6,9 +6,18 @@ const cors = require("cors")
 const { v4: uuidv4 } = require("uuid");
 const serviceAccount = require("./serviceAccountKey.json");
 const fs = require("fs");
+const bodyParser = require('body-parser')
 const path = require("path");
 const expressLayouts = require("express-ejs-layouts");
 // Initializes firebase
+app.use(cors({
+  origin:"*",
+  credentials: true,
+}))
+app.use(express.static("public"));
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 admin.initializeApp({
   // @ts-ignore
   credential: admin.credential.cert(serviceAccount),
@@ -17,23 +26,12 @@ admin.initializeApp({
 
 const ref = admin.database().ref("/myAppointments");
 
-app.use(cors({
-  origin:"*",
-  credentials: true,
-}))
-app.use(express.static("client"));
-app.use("/css", express.static(__dirname + "public/css"));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-app.use(expressLayouts);
-app.set("view engine", "ejs");
 
 
 // app.get("/panel", (request, response) => {
 //   response.render("panel");
-// });
 
 const getDateTime = (slot) => {
   return slot.split("T");
@@ -109,6 +107,10 @@ app.post("/cancelAppointment", async (request, response) => {
 
   response.send(`This slot has been removed.`);
 });
+app.get('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`backend -> http://localhost:${PORT}`);

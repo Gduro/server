@@ -1,15 +1,11 @@
 import React from "react";
-import DatePicker from "react-datetime";
-import moment from "moment";
-import "react-datetime/css/react-datetime.css";
 import Axios from "axios";
 import "./system.css";
-import { Component, useEffect, useState } from "react";
+import {  useState } from "react";
 import Swal from "sweetalert2";
 import ViewVac from "./viewvac";
 const System = () => {
   const url = "http://localhost:3001/appointment";
-  const [value, onChange] = useState(new Date());
   const [data, setData] = useState({
     slot: "",
     phone: "",
@@ -31,7 +27,7 @@ const System = () => {
         email: data.email,
       }).then((res) => {
         console.log(res);
-        if (res.status == 200) {
+        if (res.status === 200) {
           Swal.fire("Good job!", "Lekcja została umówiona!", "success");
         } else {
           Swal.fire({
@@ -54,10 +50,15 @@ const System = () => {
 
   return (
     <div className="container_form">
-      <div className="card_v2">
-        <h1 className="name">Terminy Zajęte</h1>
+      <div className="card_v2 inf">
+        <h1 className="name">Instrukcja zgłoszenia</h1>
+
         <div className="data">
-          <ViewVac />
+          <ul className="inst">
+            <li>Aby wysłać zgłoszenie należy wypełnić cały arkusz</li>
+            <li>Wysłanie zgłoszenia wiąże się z zarezerowaniem lekcji na dany termin</li>
+            <li>Kiedy dany termin jest zajety po nacisnieciu przycisku ,,Wyślij'' ukaże sie okienko z błedem, należy wtedy wybrać inną date lub godzinę</li>
+          </ul>
         </div>
       </div>
       <form className="form" onSubmit={(e) => submit(e)}>
@@ -144,10 +145,10 @@ const System = () => {
             required
           />
           <label htmlFor="" className="accept">
-            Akceptuję <a href="">Regulamin</a>
+            Akceptuję <a href="/zglos">Regulamin</a>
           </label>
           <button type="submit" className="submit">
-            submit
+            Wyślij
           </button>
         </div>
       </form>

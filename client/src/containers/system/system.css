@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     text-align:center;
-    height: 150vh;
+    height: auto;
 
   }
   .accept{
@@ -47,7 +47,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);    border-radius: 20px;
 
   }
   .name{
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     font-family: 'PT Serif', serif;
   }
   .pp{
@@ -190,3 +190,14 @@ border: 1px solid rgba(255, 255, 255, 0.3);    border-radius: 20px;
   .listDiv{
     margin-top: 20px;
   }
+  .data{
+    font-size: 20px;
+    color:rgb(169, 211, 247);
+  }
+  .inf{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+
+  }
+  

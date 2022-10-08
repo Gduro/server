@@ -60,3 +60,9 @@
     animation-fill-mode: both;
       animation-delay: 2s 
 }
+@media (max-width: 768px) {
+    .contain4{
+        flex-direction: column;
+        gap: 30px;
+    }    
+}
