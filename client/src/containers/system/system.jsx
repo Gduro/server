@@ -5,7 +5,7 @@ import {  useState } from "react";
 import Swal from "sweetalert2";
 import ViewVac from "./viewvac";
 const System = () => {
-  const url = "http://localhost:3001/appointment";
+  const url = "https://zenonklaus.herokuapp.com/appointment";
   const [data, setData] = useState({
     slot: "",
     phone: "",
